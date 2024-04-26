@@ -10,5 +10,11 @@ public class Practice {
         System.out.println(Math.asin(0.5));
         System.out.println(Math.toRadians(30));
         System.out.println(Math.toDegrees(Math.PI/6));
+        System.out.println("-------------------------------");
+        System.out.println(Math.exp(1));
+        System.out.println(Math.log(Math.E));
+        System.out.println(Math.log10(100));
+        System.out.println(Math.pow(2,3));
+        System.out.println(Math.sqrt(121));
     }
 }
