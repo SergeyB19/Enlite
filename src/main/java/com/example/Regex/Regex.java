@@ -4,7 +4,7 @@ public class Regex {
     public static void main(String[] args) {
         String s = "JA!a";
 
-        if (s.matches("J[a-zA-Z0-9].a")) {
+        if (s.matches("J\\w.a")) {
             System.out.println("YES");
 
         } else {
