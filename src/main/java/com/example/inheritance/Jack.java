@@ -22,4 +22,16 @@ public class Jack extends Human{
     public int getAge() {
         return age;
     }
+
+    @Override
+    public String toString() {
+        return "Jack{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                '}';
+    }
+
+    public String parentToString() {
+        return super.toString();
+    }
 }

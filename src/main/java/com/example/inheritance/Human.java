@@ -11,4 +11,12 @@ public class Human {
     public String getResidence() {
         return residence;
     }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "nationality='" + nationality + '\'' +
+                ", residence='" + residence + '\'' +
+                '}';
+    }
 }
