@@ -4,6 +4,10 @@ public class Human {
     String nationality = "American";
     String residence = "USA";
 
+    public Human() {
+        System.out.println("Human is called");
+    }
+
     public String getNationality() {
         return nationality;
     }

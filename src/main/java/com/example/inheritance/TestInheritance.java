@@ -8,6 +8,7 @@ public class TestInheritance {
         System.out.println(jack.toString());
         System.out.println(jack.parentToString());
         C c = new C("Jack","Smith",1);
+        C c1 = new C();
         System.out.println(c.parentToString2());
         System.out.println(c.parentToString3());
     }

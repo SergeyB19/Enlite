@@ -5,6 +5,10 @@ public class Jack extends Human{
     String surname;
     int age;
 
+    public Jack() {
+        System.out.println("Jack is called");
+    }
+
     public Jack(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;

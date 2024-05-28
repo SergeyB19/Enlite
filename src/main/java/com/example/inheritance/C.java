@@ -5,6 +5,10 @@ public class C extends Jack {
         super(name, surname, age);
     }
 
+    public C() {
+        System.out.println("C is called");
+    }
+
     public String parentToString2() {
         return super.toString();
     }
