@@ -1,6 +1,6 @@
 package com.example.inheritance;
 
-public class Jack extends Human{
+public class Jack extends Human {
     String name;
     String surname;
     int age;
@@ -37,5 +37,10 @@ public class Jack extends Human{
 
     public String parentToString() {
         return super.toString();
+    }
+
+    @Override
+    public void print() {
+        System.out.println("Jack is printing");
     }
 }

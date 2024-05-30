@@ -16,6 +16,10 @@ public class Human {
         return residence;
     }
 
+    public void print() {
+        System.out.println("Human in printing");
+    }
+
     @Override
     public String toString() {
         return "Human{" +

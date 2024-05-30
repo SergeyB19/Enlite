@@ -11,5 +11,7 @@ public class TestInheritance {
         C c1 = new C();
         System.out.println(c.parentToString2());
         System.out.println(c.parentToString3());
+
+        jack.print();
     }
 }
