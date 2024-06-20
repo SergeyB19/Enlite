@@ -11,6 +11,7 @@ public class DivisionExceptionExample {
             int b = in.nextInt();
 
             try {
+                if (b==0) throw new ArithmeticException();
                 int diff = a / b;
                 System.out.println("diff = " + diff);
             } catch (ArithmeticException e) {
