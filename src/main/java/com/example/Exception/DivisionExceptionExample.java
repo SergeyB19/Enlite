@@ -11,12 +11,19 @@ public class DivisionExceptionExample {
             int b = in.nextInt();
 
             try {
-                if (b==0) throw new ArithmeticException();
+                int div = divide(a, b);
+                System.out.println("a / b = " + div);
+                if (b == 0) throw new ArithmeticException();
                 int diff = a / b;
                 System.out.println("diff = " + diff);
             } catch (ArithmeticException e) {
                 System.out.println("You are trying to divide by zero. Please enter new numbers");
             }
         }
+    }
+
+    public static int divide(int a, int b) throws ArithmeticException {
+        if (b == 0) throw new ArithmeticException();
+        return a / b;
     }
 }
