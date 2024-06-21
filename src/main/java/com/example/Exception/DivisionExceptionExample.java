@@ -1,5 +1,6 @@
 package com.example.Exception;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class DivisionExceptionExample {
@@ -18,12 +19,19 @@ public class DivisionExceptionExample {
                 System.out.println("diff = " + diff);
             } catch (ArithmeticException e) {
                 System.out.println("You are trying to divide by zero. Please enter new numbers");
+            } catch (IOException ex2) {
+
+            } catch (RuntimeException ex3) {
+
             }
         }
     }
 
-    public static int divide(int a, int b) throws ArithmeticException {
+    public static int divide(int a, int b) throws ArithmeticException, IOException {
         if (b == 0) throw new ArithmeticException();
+        if (a == 1) {
+            throw new IOException();
+        }
         return a / b;
     }
 }
