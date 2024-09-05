@@ -5,14 +5,20 @@ import java.io.*;
 public class ReadWriteStream {
     public static void main(String[] args) throws IOException {
         File file = new File("output.txt");
-        DataOutputStream out = new DataOutputStream(new FileOutputStream(file));
-        DataInputStream in = new DataInputStream(new FileInputStream(file));
-        out.writeUTF("Privet");
-        out.write(123);
+        DataOutputStream out = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(file)));
+        DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream(file)));
+
+
+
+//        out.writeUTF("Privet");
+        out.writeUTF("Hi");
+//        out.write(123);
+        out.writeInt(670);
         out.close();
 
         System.out.println(in.readUTF());
-        System.out.println(in.read());
+//        System.out.println(in.read());
+        System.out.println(in.readInt());
         in.close();
 
        /* PrintWriter out = new PrintWriter(file);
