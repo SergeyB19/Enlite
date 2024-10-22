@@ -9,6 +9,9 @@ public class Main {
         MyThread myThread2 = new MyThread();
         myThread2.start();
         print();
+
+        Thread t2 = new Thread(new MyThreadRunnable());
+        t2.start();
     }
 
     public static void print() {
@@ -21,5 +24,15 @@ class MyThread extends Thread {
     @Override
     public void run() {
         System.out.println("Hello from MyThread"+ " " + Thread.currentThread().getName());
+    }
+}
+
+
+class MyThreadRunnable implements Runnable {
+
+    @Override
+    public void run() {
+        System.out.println("Hello from Runnable Thread"+ " " + Thread.currentThread().getName());
+
     }
 }
