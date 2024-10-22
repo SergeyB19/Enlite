@@ -12,6 +12,8 @@ public class Main {
 
         Thread t2 = new Thread(new MyThreadRunnable());
         t2.start();
+
+        System.out.println("Main thread is dead");
     }
 
     public static void print() {
@@ -23,7 +25,10 @@ public class Main {
 class MyThread extends Thread {
     @Override
     public void run() {
-        System.out.println("Hello from MyThread"+ " " + Thread.currentThread().getName());
+        for (int i = 0; i < 100; i++) {
+
+            System.out.println(i + " Hello from MyThread"+ " " + Thread.currentThread().getName());
+        }
     }
 }
 
@@ -32,7 +37,10 @@ class MyThreadRunnable implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Hello from Runnable Thread"+ " " + Thread.currentThread().getName());
+        for (int i = 0; i <100; i++) {
+
+            System.out.println(i+" Hello from Runnable Thread"+ " " + Thread.currentThread().getName());
+        }
 
     }
 }
