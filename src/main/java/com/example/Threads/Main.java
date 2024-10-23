@@ -1,14 +1,19 @@
 package com.example.Threads;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.out.println("Hello World" + " " + Thread.currentThread().getName());
         MyThread myThread = new MyThread();
         myThread.start();
 
+        myThread.join();
+
+//        Thread.sleep(1000);
+
         MyThread myThread2 = new MyThread();
         myThread2.start();
         print();
+
 
         Thread t2 = new Thread(new MyThreadRunnable());
         t2.start();
@@ -28,6 +33,7 @@ class MyThread extends Thread {
         for (int i = 0; i < 100; i++) {
 
             System.out.println(i + " Hello from MyThread"+ " " + Thread.currentThread().getName());
+            Thread.yield();
         }
     }
 }
