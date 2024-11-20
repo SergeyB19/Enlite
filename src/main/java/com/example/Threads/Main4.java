@@ -19,7 +19,7 @@ public class Main4 {
 class MyDeposit extends Thread {
     public void run() {
         try {
-            Main4.account.deposit(1000);
+            Main4.account.deposit(2000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -29,7 +29,7 @@ class MyDeposit extends Thread {
 class MyWithdrawal extends Thread {
     public void run() {
         try {
-            Main4.account.withdraw(700);
+            Main4.account.withdraw(800);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -42,23 +42,25 @@ class Account {
 
     int balance = 0;
 
-    public void deposit(int amount) throws InterruptedException {
-        lock.lock();
+    public synchronized void deposit(int amount) throws InterruptedException {
+//        lock.lock();
         Thread.sleep(1000);
         balance += amount;
+        notifyAll();
         System.out.println("Balance is increased " + balance);
-        newCondition.signalAll();
-        lock.unlock();
+//        newCondition.signalAll();
+//        lock.unlock();
     }
 
-    public void withdraw(int amount) throws InterruptedException {
-        lock.lock();
+    public synchronized void withdraw(int amount) throws InterruptedException {
+//        lock.lock();
         while (amount > balance) {
-            newCondition.await();
+//            newCondition.await();
+            wait();
         }
         System.out.println("Balance before with drawal " + balance);
         balance -= amount;
         System.out.println("Balance after with drawal " + balance);
-        lock.unlock();
+//        lock.unlock();
     }
 }
